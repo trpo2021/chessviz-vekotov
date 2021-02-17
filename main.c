@@ -13,56 +13,48 @@
 #define KING 5
 
 int chessboard[8][8];
-int figures[]
-        = {ROOK,
-           KNIGHT,
-           BISHOP,
-           KING,
-           QUEEN,
-           BISHOP,
-           KNIGHT,
-           ROOK};
-           
+int figures[] = {ROOK, KNIGHT, BISHOP, KING, QUEEN, BISHOP, KNIGHT, ROOK};
+
 void printFigure(int figure, FILE* file)
 {
     switch (figure) {
     case EMPTY:
         fprintf(file, " ");
         break;
-    case WHITE+PAWN:
+    case WHITE + PAWN:
         fprintf(file, "&#9817;");
         break;
-    case WHITE+ROOK:
+    case WHITE + ROOK:
         fprintf(file, "&#9814;");
         break;
-    case WHITE+KNIGHT:
+    case WHITE + KNIGHT:
         fprintf(file, "&#9816;");
         break;
-    case WHITE+BISHOP:
+    case WHITE + BISHOP:
         fprintf(file, "&#9815;");
         break;
-    case WHITE+QUEEN:
+    case WHITE + QUEEN:
         fprintf(file, "&#9812;");
         break;
-    case WHITE+KING:
+    case WHITE + KING:
         fprintf(file, "&#9813;");
         break;
-    case BLACK+PAWN:
+    case BLACK + PAWN:
         fprintf(file, "&#9823;");
         break;
-    case BLACK+ROOK:
+    case BLACK + ROOK:
         fprintf(file, "&#9820;");
         break;
-    case BLACK+KNIGHT:
+    case BLACK + KNIGHT:
         fprintf(file, "&#9822;");
         break;
-    case BLACK+BISHOP:
+    case BLACK + BISHOP:
         fprintf(file, "&#9821;");
         break;
-    case BLACK+QUEEN:
+    case BLACK + QUEEN:
         fprintf(file, "&#9818;");
         break;
-    case BLACK+KING:
+    case BLACK + KING:
         fprintf(file, "&#9819;");
         break;
     }
@@ -78,8 +70,8 @@ void fillChessboard(int chessboard[8][8])
     }
     // Заполняем пешки
     for (int i = 0; i < 8; i++) {
-        chessboard[1][i] = BLACK+PAWN;
-        chessboard[6][i] = WHITE+PAWN;
+        chessboard[1][i] = BLACK + PAWN;
+        chessboard[6][i] = WHITE + PAWN;
     }
     // Заполняем фигуры
     for (int i = 0; i < 8; i++) {
