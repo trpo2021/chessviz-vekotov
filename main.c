@@ -1,49 +1,68 @@
 #include <stdio.h>
 
-int chessboard[8][8];
-int white_figures[] = {1, 2, 3, 4, 5, 3, 2, 1};
-int black_figures[] = {11, 12, 13, 14, 15, 13, 12, 11};
+#define EMPTY -1
 
+#define WHITE 0
+#define BLACK 10
+
+#define PAWN 0
+#define ROOK 1
+#define KNIGHT 2
+#define BISHOP 3
+#define QUEEN 4
+#define KING 5
+
+int chessboard[8][8];
+int figures[]
+        = {ROOK,
+           KNIGHT,
+           BISHOP,
+           KING,
+           QUEEN,
+           BISHOP,
+           KNIGHT,
+           ROOK};
+           
 void printFigure(int figure, FILE* file)
 {
     switch (figure) {
-    case -1:
+    case EMPTY:
         fprintf(file, " ");
         break;
-    case 0:
+    case WHITE+PAWN:
         fprintf(file, "&#9817;");
         break;
-    case 1:
+    case WHITE+ROOK:
         fprintf(file, "&#9814;");
         break;
-    case 2:
+    case WHITE+KNIGHT:
         fprintf(file, "&#9816;");
         break;
-    case 3:
+    case WHITE+BISHOP:
         fprintf(file, "&#9815;");
         break;
-    case 4:
+    case WHITE+QUEEN:
         fprintf(file, "&#9812;");
         break;
-    case 5:
+    case WHITE+KING:
         fprintf(file, "&#9813;");
         break;
-    case 10:
+    case BLACK+PAWN:
         fprintf(file, "&#9823;");
         break;
-    case 11:
+    case BLACK+ROOK:
         fprintf(file, "&#9820;");
         break;
-    case 12:
+    case BLACK+KNIGHT:
         fprintf(file, "&#9822;");
         break;
-    case 13:
+    case BLACK+BISHOP:
         fprintf(file, "&#9821;");
         break;
-    case 14:
+    case BLACK+QUEEN:
         fprintf(file, "&#9818;");
         break;
-    case 15:
+    case BLACK+KING:
         fprintf(file, "&#9819;");
         break;
     }
@@ -54,18 +73,18 @@ void fillChessboard(int chessboard[8][8])
     // Заполняем пустотой поле
     for (int n = 0; n < 8; n++) {
         for (int m = 0; m < 8; m++) {
-            chessboard[n][m] = -1;
+            chessboard[n][m] = EMPTY;
         }
     }
     // Заполняем пешки
     for (int i = 0; i < 8; i++) {
-        chessboard[1][i] = 10;
-        chessboard[6][i] = 0;
+        chessboard[1][i] = BLACK+PAWN;
+        chessboard[6][i] = WHITE+PAWN;
     }
     // Заполняем фигуры
     for (int i = 0; i < 8; i++) {
-        chessboard[0][i] = black_figures[i];
-        chessboard[7][i] = white_figures[i];
+        chessboard[0][i] = BLACK + figures[i];
+        chessboard[7][i] = WHITE + figures[i];
     }
 }
 
