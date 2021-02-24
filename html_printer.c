@@ -53,7 +53,7 @@ void printChessboard(int chessboard[8][8], FILE* html_file)
     for (int n = 0; n < 8; n++) {
         fprintf(html_file, "<tr>");
         for (int m = 0; m < 8; m++) {
-            fprintf(html_file, "<td height='21'>");
+            fprintf(html_file, "<td height='65' style='font-size: 50px'>");
             printFigure(chessboard[n][m], html_file);
             fprintf(html_file, "</td>");
         }
