@@ -1,10 +1,13 @@
-all: chessviz
+CFLAGS = -Wall -Werror -Wextra
 
-chessviz: main.o
-	gcc main.o -o chessviz
+chessviz: main.o html_printer.o
+	$(CC) $(CFLAGS) -o $@ $^
 
 main.o: main.c
-	gcc -Wall -Werror -c main.c
+	$(CC) -c $(CFLAGS) -o $@ $<
+	
+html_printer.o: html_printer.c
+	$(CC) -c $(CFLAGS) -o $@ $<	
 
 clean:
 	rm -rf *.o chessviz
