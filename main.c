@@ -1,16 +1,5 @@
 #include <stdio.h>
-
-#define EMPTY -1
-
-#define WHITE 0
-#define BLACK 10
-
-#define PAWN 0
-#define ROOK 1
-#define KNIGHT 2
-#define BISHOP 3
-#define QUEEN 4
-#define KING 5
+#include "chess_defines.h"
 
 int chessboard[8][8];
 int figures[] = {ROOK, KNIGHT, BISHOP, KING, QUEEN, BISHOP, KNIGHT, ROOK};
