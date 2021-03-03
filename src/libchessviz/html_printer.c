@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include "html_printer.h"
 #include "chess_defines.h"
+#include "html_printer.h"
+#include <stdio.h>
 
 void printFigure(int figure, FILE* file)
 {
