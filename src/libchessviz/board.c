@@ -1,10 +1,6 @@
-#include <stdio.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 #include "chess_defines.h"
-#include "html_printer.h"
+#include "board.h"
 
-int chessboard[8][8];
 int figures[] = {ROOK, KNIGHT, BISHOP, KING, QUEEN, BISHOP, KNIGHT, ROOK};
 
 void fillChessboard(int chessboard[8][8])
@@ -25,11 +21,4 @@ void fillChessboard(int chessboard[8][8])
         chessboard[0][i] = BLACK + figures[i];
         chessboard[7][i] = WHITE + figures[i];
     }
-}
-
-int main()
-{
-    fillChessboard(chessboard);
-    mkdir("result", 0750);
-    printChessboard(chessboard, fopen("result/1.html", "w"));
 }
