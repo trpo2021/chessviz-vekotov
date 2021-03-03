@@ -1,5 +1,5 @@
-#include "chess_defines.h"
 #include "board.h"
+#include "chess_defines.h"
 
 int figures[] = {ROOK, KNIGHT, BISHOP, KING, QUEEN, BISHOP, KNIGHT, ROOK};
 
