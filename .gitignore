@@ -1,3 +1,6 @@
-obj/*
-bin/*
+obj/src/chessviz/*.o
+obj/src/chessviz/libchessviz/*.o
+obj/src/chessviz/libchessviz/*.a
+bin/result
+bin/chessviz
 makefile~
