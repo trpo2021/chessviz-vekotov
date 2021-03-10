@@ -27,3 +27,8 @@ clean:
 	rm -rf $(LIBCHESSVIZ_OBJ)*.o
 	rm -rf $(LIBCHESSVIZ_OBJ)*.a
 	rm -rf $(CHESSVIZ_BIN)chessviz
+
+format:
+	git ls-files *.{c,h} | xargs clang-format -i
+	git add .
+	git commit -m "Format code"
