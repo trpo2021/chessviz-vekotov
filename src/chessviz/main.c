@@ -7,20 +7,20 @@
 
 int chessboard[8][8];
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
-    if(argc == 0) {
-    	fprintf("Error: Incorrect use. Use: chessviz <file>");
-    	return 1;
+    if (argc == 0) {
+        fprintf("Error: Incorrect use. Use: chessviz <file>");
+        return 1;
     }
-    
+
     FILE* moves = fopen(argv);
-    
-    if(moves == NULL) {
-    	fprintf("Error: Cant open file");
-    	return 2;
+
+    if (moves == NULL) {
+        fprintf("Error: Cant open file");
+        return 2;
     }
-    
+
     fillChessboard(chessboard);
     mkdir("result", 0750);
     printChessboard(chessboard, fopen("result/1.html", "w"));
