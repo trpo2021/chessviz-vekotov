@@ -7,17 +7,17 @@
 
 int chessboard[8][8];
 
-int main(int argc, char** argv)
+int main(int argc, const char** argv)
 {
     if (argc == 0) {
-        fprintf("Error: Incorrect use. Use: chessviz <file>");
+        printf("Error: Incorrect use. Use: chessviz <file>");
         return 1;
     }
 
-    FILE* moves = fopen(argv);
+    FILE* moves = fopen(*argv, "r");
 
     if (moves == NULL) {
-        fprintf("Error: Cant open file");
+        printf("Error: Cant open file");
         return 2;
     }
 
