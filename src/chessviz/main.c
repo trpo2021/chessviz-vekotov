@@ -1,6 +1,6 @@
-#include "../libchessviz/board.h"
-#include "../libchessviz/chess_defines.h"
-#include "../libchessviz/html_printer.h"
+#include <libchessviz/board.h>
+#include <libchessviz/chess_defines.h>
+#include <libchessviz/html_printer.h>
 #include <stdio.h>
 #include <sys/stat.h>
 #include <sys/types.h>

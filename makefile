@@ -1,4 +1,4 @@
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I src/
 CHESSVIZ_SRC = src/chessviz/
 LIBCHESSVIZ_SRC = src/libchessviz/
 
