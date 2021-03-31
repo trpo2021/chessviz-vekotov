@@ -30,5 +30,3 @@ clean:
 
 format:
 	git ls-files *.{c,h} | xargs clang-format -i
-	git add .
-	git commit -m "Format code"
